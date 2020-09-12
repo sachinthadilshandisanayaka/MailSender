@@ -14,17 +14,20 @@ public class Main {
 //        Input input = new CommandLineInput();
 //        String filePath = input.readOperator();
 //        System.out.println(filePath);
-        StringRepository stringRepository = new FileStringRepository();
-        try {
-            errors = stringRepository.FileRead("hello");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println(errors);
+//        StringRepository stringRepository = new FileStringRepository();
+//        try {
+//            errors = stringRepository.FileRead("hello");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println(errors);
 
         TimeStampReposiroty timeStampReposiroty = new FileTimeStampRepository();
         String timeStamp = timeStampReposiroty.GetTimeStamp();
         System.out.println(timeStamp);
+
+        TimeStampReposiroty timeStampReposiroty1 = new FileTimeStampRepository();
+        timeStampReposiroty1.SetTimeStamp("2020-09-99T00:00:00Z");
 
 //        EmailRepository emailRepository = new MysqlEmailRepository();
 //        ArrayList<String> emails = emailRepository.ReadOperation();
