@@ -1,33 +1,44 @@
+import input.CommandLineInput;
+import input.Input;
+import operation.FilterOperation;
+import operation.Operation;
 import repository.FileStringRepository;
 import repository.StringRepository;
 import timeStampRepository.FileTimeStampRepository;
 import timeStampRepository.TimeStampReposiroty;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Main {
-    public static String errors;
+
     public static void main(String[] args) {
-        String errorMessage = "Can not access the internet\n" +
-                "Email is incorect\n" +
-                "User Name is incorrect";
+
+        ArrayList<String> readedData = null;
+        String timeStamp = null;
+//        String errorMessage2 = "Can not access the internet\n" +
+//                "Email is incorect\n" +
+//                "User Name is incorrect";
 //        Input input = new CommandLineInput();
 //        String filePath = input.readOperator();
 //        System.out.println(filePath);
 //        StringRepository stringRepository = new FileStringRepository();
 //        try {
-//            errors = stringRepository.FileRead("hello");
+//            readedData = stringRepository.FileRead("hello");
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-//        System.out.println(errors);
+//        System.out.println(readedData);
 
-        TimeStampReposiroty timeStampReposiroty = new FileTimeStampRepository();
-        String timeStamp = timeStampReposiroty.GetTimeStamp();
-        System.out.println(timeStamp);
+//        TimeStampReposiroty timeStampReposiroty = new FileTimeStampRepository();
+//         timeStamp = timeStampReposiroty.GetTimeStamp();
+//        System.out.println(timeStamp);
 
-        TimeStampReposiroty timeStampReposiroty1 = new FileTimeStampRepository();
-        timeStampReposiroty1.SetTimeStamp("2020-09-99T00:00:00Z");
+        Operation operation = new FilterOperation();
+        String errorMessage = operation.GetErrors( readedData, "2020-09-06T17:29:20Z");
+
+//        TimeStampReposiroty timeStampReposiroty1 = new FileTimeStampRepository();
+//        timeStampReposiroty1.SetTimeStamp("2020-09-99T00:00:00Z");
 
 //        EmailRepository emailRepository = new MysqlEmailRepository();
 //        ArrayList<String> emails = emailRepository.ReadOperation();
@@ -38,6 +49,6 @@ public class Main {
 //        System.out.println(newEmails);
 //
 //        EmailHub emailHub = new EmailHub();
-//        emailHub.EmailSendRepository(newEmails, errorMessage);
+//        emailHub.EmailSendRepository(newEmails, errorMessage2);
     }
 }

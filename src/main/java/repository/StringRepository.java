@@ -1,7 +1,8 @@
 package repository;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public interface StringRepository {
-    String FileRead(String path) throws IOException;
+    ArrayList<String> FileRead(String path) throws IOException;
 }

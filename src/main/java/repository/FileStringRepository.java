@@ -1,6 +1,7 @@
 package repository;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class FileStringRepository implements StringRepository{
 
@@ -9,9 +10,11 @@ public class FileStringRepository implements StringRepository{
     BufferedReader bufferedReader;
     String path2 = "C:\\Users\\sachi dissanayake\\Desktop\\Folder\\log.txt";
 
-    public String FileRead(String path) throws IOException {
+    public ArrayList<String> FileRead(String path) throws IOException {
         String line;
-        String errors = "";
+//        String errors = "";
+        ArrayList<String> errors = new ArrayList<String>();
+
         File file = new File(path2);
 
         try {
@@ -23,7 +26,8 @@ public class FileStringRepository implements StringRepository{
         bufferedReader = new BufferedReader(inputStreamReader);
 
         while ((line = bufferedReader.readLine())!= null){
-            errors += line + "\n";
+//            errors += line + "\n";
+            errors.add(line);
         }
         fileInputStream.close();
         inputStreamReader.close();

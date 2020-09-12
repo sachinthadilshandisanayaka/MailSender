@@ -59,5 +59,18 @@
 <!--            <artifactId>mysql-connector-java</artifactId>-->
 <!--            <version>6.0.3</version>-->
 <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/com.cedarsoftware/java-util -->
+        <dependency>
+            <groupId>com.cedarsoftware</groupId>
+            <artifactId>java-util</artifactId>
+            <version>1.8.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.2</version>
+        </dependency>
+
     </dependencies>
 </project>
