@@ -2,6 +2,8 @@ import authorization.Authorization;
 import authorization.EmailAuthorization;
 import emailManager.EmailHub;
 import emailManager.SendMail;
+import input.CommandLineInput;
+import input.Input;
 import repository.EmailRepository;
 import repository.MysqlEmailRepository;
 
@@ -12,6 +14,10 @@ public class Main {
         String errorMessage = "Can not access the internet\n" +
                 "Email is incorect\n" +
                 "User Name is incorrect";
+        Input input = new CommandLineInput();
+        String filePath = input.readOperator();
+
+        
 
         EmailRepository emailRepository = new MysqlEmailRepository();
         ArrayList<String> emails = emailRepository.ReadOperation();
