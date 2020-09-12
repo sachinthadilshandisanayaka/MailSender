@@ -1,5 +1,7 @@
-import readRepository.FileStringRepository;
-import readRepository.StringRepository;
+import repository.FileStringRepository;
+import repository.StringRepository;
+import timeStampRepository.FileTimeStampRepository;
+import timeStampRepository.TimeStampReposiroty;
 
 import java.io.IOException;
 
@@ -19,6 +21,10 @@ public class Main {
             e.printStackTrace();
         }
         System.out.println(errors);
+
+        TimeStampReposiroty timeStampReposiroty = new FileTimeStampRepository();
+        String timeStamp = timeStampReposiroty.GetTimeStamp();
+        System.out.println(timeStamp);
 
 //        EmailRepository emailRepository = new MysqlEmailRepository();
 //        ArrayList<String> emails = emailRepository.ReadOperation();

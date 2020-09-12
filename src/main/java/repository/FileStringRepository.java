@@ -1,4 +1,4 @@
-package readRepository;
+package repository;
 
 import java.io.*;
 
@@ -25,6 +25,9 @@ public class FileStringRepository implements StringRepository{
         while ((line = bufferedReader.readLine())!= null){
             errors += line + "\n";
         }
+        fileInputStream.close();
+        inputStreamReader.close();
+        bufferedReader.close();
         return errors;
     }
 }

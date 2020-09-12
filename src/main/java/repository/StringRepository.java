@@ -1,4 +1,4 @@
-package readRepository;
+package repository;
 
 import java.io.IOException;
 
