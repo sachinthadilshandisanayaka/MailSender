@@ -22,20 +22,20 @@ public class Main {
 //        Input input = new CommandLineInput();
 //        String filePath = input.readOperator();
 //        System.out.println(filePath);
-//        StringRepository stringRepository = new FileStringRepository();
-//        try {
-//            readedData = stringRepository.FileRead("hello");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        System.out.println(readedData);
+        StringRepository stringRepository = new FileStringRepository();
+        try {
+            readedData = stringRepository.FileRead("hello");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(readedData);
 
 //        TimeStampReposiroty timeStampReposiroty = new FileTimeStampRepository();
 //         timeStamp = timeStampReposiroty.GetTimeStamp();
 //        System.out.println(timeStamp);
 
         Operation operation = new FilterOperation();
-        String errorMessage = operation.GetErrors( readedData, "2020-09-06T17:29:20Z");
+        String errorMessage = operation.GetErrors( readedData, "2020-09-06T17:24:09Z");
 
 //        TimeStampReposiroty timeStampReposiroty1 = new FileTimeStampRepository();
 //        timeStampReposiroty1.SetTimeStamp("2020-09-99T00:00:00Z");

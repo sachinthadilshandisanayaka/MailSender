@@ -18,18 +18,28 @@ public class FilterOperation implements Operation{
 
 //        Date date = Date.from(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ").parse(sDate6.replaceFirst("Z", ".000+0000"), ZonedDateTime::from).toInstant());
         Date date = Date.from(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ").parse(time.replaceFirst("Z", ".000+0000"), ZonedDateTime::from).toInstant());
-        System.out.println(date);
+//        System.out.println(date);
+
+        for ( String fileData: readedDate ) {
+
+            String[] fileDate = fileData.split(" ");
+            String parseString = fileDate[0];
+
+            Date temporyDate = Date.from(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ").parse(parseString.replaceFirst("Z", ".000+0000"), ZonedDateTime::from).toInstant());
+
+            long diff = date.getTime() - temporyDate.getTime();
+            if ( diff < 0 ) {
+                if(fileDate[1].equals("ERROR") ) {
+
+                    String[] split_error_message = fileData.split(" ", 3);
+                    errorMessage += split_error_message[2] + "\n";
+                }
+            }
+        }
 
 
 
-
-//        for ( String error: readedDate ) {
-//            String[] Slited_error = error.split(" ");
-//            if(Slited_error[1].equals("ERROR") ) {
-//                errorMessage += Slited_error[2] + "\n";
-//            }
-//        }
-
+        System.out.println(errorMessage);
         return errorMessage;
     }
 }
