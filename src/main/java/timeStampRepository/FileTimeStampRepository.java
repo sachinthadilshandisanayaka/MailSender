@@ -13,7 +13,7 @@ public class FileTimeStampRepository implements TimeStampReposiroty{
     public String GetTimeStamp() {
 
         String time = "";
-        File file = new File("C:\\Users\\sachi dissanayake\\Desktop\\Folder\\timeStamp.txt");
+        File file = new File("D:\\practices\\java practice\\untitled8\\src\\resources\\timeStamp.txt");
 
         try {
             fileInputStream = new FileInputStream(file);
@@ -40,22 +40,27 @@ public class FileTimeStampRepository implements TimeStampReposiroty{
         return time;
     }
     public void SetTimeStamp(String time) {
-        FileWriter fileWriter = null;
-        File file = new File("C:\\Users\\sachi dissanayake\\Desktop\\Folder\\timeStamp.txt");
-        try {
-            fileWriter = new FileWriter(file, false);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if ( time != null ){
+            FileWriter fileWriter = null;
+            File file = new File("D:\\practices\\java practice\\untitled8\\src\\resources\\timeStamp.txt");
+            try {
+                fileWriter = new FileWriter(file, false);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                fileWriter.write(time);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                fileWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        try {
-            fileWriter.write(time);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            fileWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+        else {
+            return;
         }
     }
 

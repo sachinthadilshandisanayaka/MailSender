@@ -8,14 +8,14 @@ public class FileStringRepository implements StringRepository{
     FileInputStream fileInputStream;
     InputStreamReader inputStreamReader;
     BufferedReader bufferedReader;
-    String path2 = "C:\\Users\\sachi dissanayake\\Desktop\\Folder\\log.txt";
+//    String path2 = "D:\\practices\\java practice\\untitled8\\src\\resources\\log.txt";
 
     public ArrayList<String> FileRead(String path) throws IOException {
         String line;
 //        String errors = "";
-        ArrayList<String> errors = new ArrayList<String>();
+        ArrayList<String> readedData = new ArrayList<String>();
 
-        File file = new File(path2);
+        File file = new File(path);
 
         try {
             fileInputStream = new FileInputStream(file);
@@ -25,13 +25,16 @@ public class FileStringRepository implements StringRepository{
         inputStreamReader = new InputStreamReader(fileInputStream);
         bufferedReader = new BufferedReader(inputStreamReader);
 
-        while ((line = bufferedReader.readLine())!= null){
-//            errors += line + "\n";
-            errors.add(line);
+        while ((line = bufferedReader.readLine())!= null) {
+            readedData.add(line);
         }
         fileInputStream.close();
         inputStreamReader.close();
         bufferedReader.close();
-        return errors;
+        if (readedData != null ) {
+            return readedData;
+        }
+        System.out.println("Log File is Empty");
+        return null;
     }
 }

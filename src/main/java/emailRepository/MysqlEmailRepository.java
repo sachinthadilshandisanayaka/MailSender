@@ -8,7 +8,7 @@ public class MysqlEmailRepository implements EmailRepository{
     String user = "root";
     String password = "";
     String url = "jdbc:mysql://localhost:3306/emails";
-    String quary = "SELECT email FROM EMAIL_CONTAINER";
+    String quary = "SELECT useremail FROM email";
     ArrayList<String> userData = new ArrayList<String>();
 
     public MysqlEmailRepository() {
