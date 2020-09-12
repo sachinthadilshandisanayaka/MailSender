@@ -1,11 +1,10 @@
 import authorization.Authorization;
 import authorization.EmailAuthorization;
 import emailManager.EmailHub;
-import emailManager.SendMail;
 import input.CommandLineInput;
 import input.Input;
-import repository.EmailRepository;
-import repository.MysqlEmailRepository;
+import emailRepository.EmailRepository;
+import emailRepository.MysqlEmailRepository;
 
 import java.util.ArrayList;
 
@@ -16,8 +15,8 @@ public class Main {
                 "User Name is incorrect";
         Input input = new CommandLineInput();
         String filePath = input.readOperator();
+        System.out.println(filePath);
 
-        
 
         EmailRepository emailRepository = new MysqlEmailRepository();
         ArrayList<String> emails = emailRepository.ReadOperation();

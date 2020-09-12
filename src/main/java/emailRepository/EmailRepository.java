@@ -1,4 +1,4 @@
-package repository;
+package emailRepository;
 
 import java.util.ArrayList;
 
