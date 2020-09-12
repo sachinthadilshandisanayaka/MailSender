@@ -11,8 +11,8 @@ public class FileStringRepository implements StringRepository{
 //    String path2 = "D:\\practices\\java practice\\untitled8\\src\\resources\\log.txt";
 
     public ArrayList<String> FileRead(String path) throws IOException {
+
         String line;
-//        String errors = "";
         ArrayList<String> readedData = new ArrayList<String>();
 
         File file = new File(path);
