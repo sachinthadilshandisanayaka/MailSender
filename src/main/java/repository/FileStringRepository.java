@@ -34,7 +34,7 @@ public class FileStringRepository implements StringRepository{
         if (readedData != null ) {
             return readedData;
         }
-        System.out.println("Log File is Empty");
+//        System.out.println("Log File is Empty");
         return null;
     }
 }
