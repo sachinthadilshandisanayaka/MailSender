@@ -1,15 +1,7 @@
-import ErrorsCheckRepository.FileStringRepository;
-import ErrorsCheckRepository.StringRepository;
-import authorization.Authorization;
-import authorization.EmailAuthorization;
-import emailManager.EmailHub;
-import input.CommandLineInput;
-import input.Input;
-import emailRepository.EmailRepository;
-import emailRepository.MysqlEmailRepository;
+import readRepository.FileStringRepository;
+import readRepository.StringRepository;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Main {
     public static String errors;
