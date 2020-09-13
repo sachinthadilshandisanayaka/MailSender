@@ -48,38 +48,39 @@ public class MailSendApp {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (readedData.equals(null)) {
+        if (readedData == null) {
             ui.printData("LOG file is EMPTY");
             return;
         }
         timeStamp = timeStampReposiroty.GetTimeStamp();
-        System.out.println(timeStamp);
+//        System.out.println(timeStamp);
         errorMessage = operation.GetErrors( readedData, timeStamp);
 
-        if (errorMessage.equals(null)) {
+        if (errorMessage == null) {
             ui.printData("No ERRORS in file");
             return;
         }
         LastTimeStamp = operation1.getLastTimeStamp( readedData );
-        if(LastTimeStamp.equals(null)) {
+        if(LastTimeStamp == null) {
             ui.printData("ERROR occurs");
             return;
         }
         timeStampReposiroty1.SetTimeStamp(LastTimeStamp);
         ArrayList<String> emails = emailRepository.ReadOperation();
-        if(emails.equals(null)) {
+        if(emails == null) {
             ui.printData("NO Emails in DataBase");
             return;
         }
         ArrayList<String> newEmails =  authorization.Validation(emails);
-        if(newEmails.equals(null)) {
+        if(newEmails == null) {
             ui.printData("NO Valid Emails in DataBase");
             return;
         }
         ArrayList<String> returnMessage = emailHub.EmailSendRepository(newEmails, errorMessage);
-        if (readedData.equals(null)) {
+        if (readedData == null) {
             ui.printData("Can not send emails, There is error in that read log file or something");
         } else {
+            System.out.println(errorMessage);
             ui.printData("EMAILS send");
         }
     }
