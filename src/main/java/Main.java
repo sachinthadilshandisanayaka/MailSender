@@ -23,7 +23,6 @@ public class Main {
         StringRepository stringRepository = new FileStringRepository();
         TimeStampReposiroty timeStampReposiroty = new FileTimeStampRepository();
         Operation operation = new FilterOperation();
-        TimeStampReposiroty timeStampReposiroty1 = new FileTimeStampRepository();
         EmailRepository emailRepository = new MysqlEmailRepository();
         Authorization authorization = new EmailAuthorization();
         EmailHub emailHub = new EmailHub();
