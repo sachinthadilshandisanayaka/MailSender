@@ -15,7 +15,6 @@ public class MailSendApp {
     private final StringRepository stringRepository;
     private final TimeStampReposiroty timeStampReposiroty;
     private final Operation operation;
-    private final TimeStampReposiroty timeStampReposiroty1;
     private final EmailRepository emailRepository;
     private final Authorization authorization;
     private final EmailHub emailHub;
