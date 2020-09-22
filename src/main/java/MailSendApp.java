@@ -23,7 +23,7 @@ public class MailSendApp {
     private final Ui ui;
 
     public MailSendApp(Input input, StringRepository stringRepository, TimeStampReposiroty timeStampReposiroty,
-                       Operation operation, Operation operation1, TimeStampReposiroty timeStampReposiroty1,
+                       Operation operation, TimeStampReposiroty timeStampReposiroty1,
                        EmailRepository emailRepository, Authorization authorization, EmailHub emailHub, Ui ui) {
         this.input = input;
         this.stringRepository = stringRepository;
