@@ -28,7 +28,7 @@ public class Main {
         Authorization authorization = new EmailAuthorization();
         EmailHub emailHub = new EmailHub();
         Ui ui = new CommandLineUI();
-        MailSendApp mailSendApp = new MailSendApp(input, stringRepository,  timeStampReposiroty, operation, operation1, timeStampReposiroty1,
+        MailSendApp mailSendApp = new MailSendApp(input, stringRepository,  timeStampReposiroty, operation, timeStampReposiroty1,
                 emailRepository, authorization, emailHub, ui);
         mailSendApp.Execute();
 
