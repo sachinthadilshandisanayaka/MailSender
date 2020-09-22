@@ -61,7 +61,7 @@ public class MailSendApp {
             ui.printData("ERROR occurs");
             return;
         }
-        timeStampReposiroty1.SetTimeStamp(LastTimeStamp);
+        timeStampReposiroty.SetTimeStamp(LastTimeStamp);
         ArrayList<String> emails = emailRepository.ReadOperation();
         if(emails == null) {
             ui.printData("NO Emails in DataBase");
