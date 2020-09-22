@@ -28,7 +28,6 @@ public class MailSendApp {
         this.stringRepository = stringRepository;
         this.timeStampReposiroty = timeStampReposiroty;
         this.operation = operation;
-        this.timeStampReposiroty1 = timeStampReposiroty1;
         this.emailRepository = emailRepository;
         this.authorization = authorization;
         this.emailHub = emailHub;
