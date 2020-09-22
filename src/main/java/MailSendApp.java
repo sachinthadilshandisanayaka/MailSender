@@ -59,7 +59,7 @@ public class MailSendApp {
             ui.printData("No ERRORS in file");
             return;
         }
-        LastTimeStamp = operation1.getLastTimeStamp( readedData );
+        LastTimeStamp = operation.getLastTimeStamp( readedData );
         if(LastTimeStamp == null) {
             ui.printData("ERROR occurs");
             return;
