@@ -44,6 +44,12 @@ public class MailSendApp {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        if(readedData.size() == 0){
+            ui.printData("LOG file is EMPTY");
+            return;
+        }
+
         if (readedData == null) {
             ui.printData("LOG file is EMPTY");
             return;
