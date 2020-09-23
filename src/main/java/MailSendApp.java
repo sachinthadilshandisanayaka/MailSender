@@ -79,7 +79,7 @@ public class MailSendApp {
             return;
         }
         ArrayList<String> returnMessage = emailHub.EmailSendRepository(newEmails, errorMessage);
-        if (readedData == null) {
+        if (returnMessage == null) {
             ui.printData("Can not send emails, There is error in that read log file or something");
         } else {
             System.out.println(errorMessage);
