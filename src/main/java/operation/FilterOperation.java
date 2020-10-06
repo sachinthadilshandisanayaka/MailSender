@@ -13,7 +13,6 @@ public class FilterOperation implements Operation{
         Date date = null;
         String errorMessage = "";
         DateFomate dateFomate = new DateConvertMethod();
-
         FileFilter fileFilter = new GetFileLastTimeStam();
 
         if( !fileFilter.GetLastTimeStamp(readedDate).equals(time)) {

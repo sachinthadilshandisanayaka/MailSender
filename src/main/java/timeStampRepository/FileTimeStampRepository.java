@@ -1,5 +1,8 @@
 package timeStampRepository;
 
+import timeStampRepository.timeStamp.GetFilePath;
+import timeStampRepository.timeStamp.GetTimeStampPath;
+
 import java.io.*;
 import java.util.*;
 
@@ -11,10 +14,10 @@ public class FileTimeStampRepository implements TimeStampReposiroty{
     BufferedReader bufferedReader;
 
     public String GetTimeStamp() {
-
+        GetTimeStampPath getTimeStampPath = new GetFilePath();
         String time = "";
-        File file = new File("D:\\practices\\java practice\\untitled8\\src\\resources\\timeStamp.txt");
 
+        File file = new File(getTimeStampPath.GetFilePath());
         try {
             fileInputStream = new FileInputStream(file);
         } catch (FileNotFoundException e) {
@@ -40,9 +43,11 @@ public class FileTimeStampRepository implements TimeStampReposiroty{
         return time;
     }
     public void SetTimeStamp(String time) {
+        GetTimeStampPath getTimeStampPath = new GetFilePath();
+
         if ( time != null ){
             FileWriter fileWriter = null;
-            File file = new File("D:\\practices\\java practice\\untitled8\\src\\resources\\timeStamp.txt");
+            File file = new File(getTimeStampPath.GetFilePath());
             try {
                 fileWriter = new FileWriter(file, false);
             } catch (IOException e) {
