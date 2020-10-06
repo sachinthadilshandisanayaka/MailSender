@@ -1,5 +1,7 @@
 package dataBaseConnection;
 
+import java.sql.Connection;
+
 public interface GetConnection {
-    void EmailRepository();
+    Connection EmailRepository();
 }
