@@ -6,7 +6,7 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
 public class SendMail {
-    public JsonNode sendSimpleMessage(String email, String erroMessage) throws UnirestException {
+    public JsonNode sendSimpleMessage(String email, String erroMessage, String subject) throws UnirestException {
         String url = null;
         String password = null;
 
@@ -14,7 +14,7 @@ public class SendMail {
                 .basicAuth("api", "1f39a178b73a57ce04dee76361879a98-0f472795-e19a09a9")
                 .field("from", "sachidisanayaka98@gmail.com")
                 .field("to", email)
-                .field("subject", "ERROR")
+                .field("subject", subject)
                 .field("text", erroMessage)
                 .asJson();
 
