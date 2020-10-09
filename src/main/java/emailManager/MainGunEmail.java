@@ -7,7 +7,7 @@ import emailManager.emailType.GetEmailType;
 
 import java.util.ArrayList;
 
-public class EmailHub {
+public class MainGunEmail implements EmailMagange{
     public ArrayList<String> EmailSendRepository(ArrayList<String> emails, String errorMessage) {
         GetEmailType getEmailType = new ErrorEmailType();
         if ( errorMessage != null ) {

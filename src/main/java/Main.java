@@ -1,8 +1,9 @@
+import emailManager.EmailMagange;
 import ui.CommandLineUI;
 import ui.Ui;
 import authorization.Authorization;
 import authorization.EmailAuthorization;
-import emailManager.EmailHub;
+import emailManager.MainGunEmail;
 import emailRepository.EmailRepository;
 import emailRepository.MysqlEmailRepository;
 import input.CommandLineInput;
@@ -25,10 +26,10 @@ public class Main {
         Operation operation = new FilterOperation();
         EmailRepository emailRepository = new MysqlEmailRepository();
         Authorization authorization = new EmailAuthorization();
-        EmailHub emailHub = new EmailHub();
+        EmailMagange emailMagange = new MainGunEmail();
         Ui ui = new CommandLineUI();
         MailSendApp mailSendApp = new MailSendApp(input, stringRepository,  timeStampReposiroty, operation,
-                emailRepository, authorization, emailHub, ui);
+                emailRepository, authorization, emailMagange, ui);
         mailSendApp.Execute();
 
     }

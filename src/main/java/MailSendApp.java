@@ -1,5 +1,6 @@
 import authorization.Authorization;
-import emailManager.EmailHub;
+import emailManager.EmailMagange;
+import emailManager.MainGunEmail;
 import emailRepository.EmailRepository;
 import input.Input;
 import operation.Operation;
@@ -17,11 +18,11 @@ public class MailSendApp {
     private final Operation operation;
     private final EmailRepository emailRepository;
     private final Authorization authorization;
-    private final EmailHub emailHub;
+    private final EmailMagange emailMagange;
     private final Ui ui;
 
     public MailSendApp(Input input, StringRepository stringRepository, TimeStampReposiroty timeStampReposiroty,
-                       Operation operation, EmailRepository emailRepository, Authorization authorization, EmailHub emailHub,
+                       Operation operation, EmailRepository emailRepository, Authorization authorization, EmailMagange emailMagange,
                        Ui ui) {
         this.input = input;
         this.stringRepository = stringRepository;
@@ -29,7 +30,7 @@ public class MailSendApp {
         this.operation = operation;
         this.emailRepository = emailRepository;
         this.authorization = authorization;
-        this.emailHub = emailHub;
+        this.emailMagange = emailMagange;
         this.ui = ui;
     }
     public void Execute() {
@@ -78,7 +79,7 @@ public class MailSendApp {
             ui.printData("NO Valid Emails in DataBase");
             return;
         }
-        ArrayList<String> returnMessage = emailHub.EmailSendRepository(newEmails, errorMessage);
+        ArrayList<String> returnMessage = emailMagange.EmailSendRepository(newEmails, errorMessage);
         if (returnMessage == null) {
             ui.printData("Can not send emails, There is error in that read log file or something");
         } else {
