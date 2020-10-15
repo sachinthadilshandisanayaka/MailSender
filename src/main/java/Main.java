@@ -1,4 +1,6 @@
 import emailManager.EmailMagange;
+import inputValidation.FileExistsCheck;
+import inputValidation.PathExistsCheck;
 import ui.CommandLineUI;
 import ui.Ui;
 import authorization.Authorization;
@@ -21,6 +23,7 @@ public class Main {
     public static void main(String[] args) {
 
         Input input = new CommandLineInput();
+        PathExistsCheck pathExistsCheck = new FileExistsCheck();
         StringRepository stringRepository = new FileStringRepository();
         TimeStampReposiroty timeStampReposiroty = new FileTimeStampRepository();
         Operation operation = new FilterOperation();
@@ -28,7 +31,7 @@ public class Main {
         Authorization authorization = new EmailAuthorization();
         EmailMagange emailMagange = new MainGunEmail();
         Ui ui = new CommandLineUI();
-        MailSendApp mailSendApp = new MailSendApp(input, stringRepository,  timeStampReposiroty, operation,
+        MailSendApp mailSendApp = new MailSendApp(input, pathExistsCheck, stringRepository,  timeStampReposiroty, operation,
                 emailRepository, authorization, emailMagange, ui);
         mailSendApp.Execute();
 

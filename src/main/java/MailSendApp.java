@@ -3,6 +3,7 @@ import emailManager.EmailMagange;
 import emailManager.MainGunEmail;
 import emailRepository.EmailRepository;
 import input.Input;
+import inputValidation.PathExistsCheck;
 import operation.Operation;
 import repository.StringRepository;
 import timeStampRepository.TimeStampReposiroty;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 
 public class MailSendApp {
     private final Input input;
+    private final PathExistsCheck pathExistsCheck;
     private final StringRepository stringRepository;
     private final TimeStampReposiroty timeStampReposiroty;
     private final Operation operation;
@@ -21,10 +23,11 @@ public class MailSendApp {
     private final EmailMagange emailMagange;
     private final Ui ui;
 
-    public MailSendApp(Input input, StringRepository stringRepository, TimeStampReposiroty timeStampReposiroty,
+    public MailSendApp(Input input, PathExistsCheck pathExistsCheck, StringRepository stringRepository, TimeStampReposiroty timeStampReposiroty,
                        Operation operation, EmailRepository emailRepository, Authorization authorization, EmailMagange emailMagange,
                        Ui ui) {
         this.input = input;
+        this.pathExistsCheck = pathExistsCheck;
         this.stringRepository = stringRepository;
         this.timeStampReposiroty = timeStampReposiroty;
         this.operation = operation;
@@ -40,6 +43,10 @@ public class MailSendApp {
         String LastTimeStamp = null;
 
         String filePath = input.readOperator();
+        if(pathExistsCheck.Check(filePath) == null) {
+            ui.printData("Entered Path is incorrect");
+            return;
+        }
         try {
             readedData = stringRepository.FileRead(filePath);
         } catch (IOException e) {
