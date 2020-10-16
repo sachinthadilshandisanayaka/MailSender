@@ -1,5 +1,7 @@
 package emailManager;
 
+import emailManager.emailFrom.OfficialEmail;
+import emailManager.emailFrom.SenderEmail;
 import emailManager.emailType.ErrorEmailType;
 import emailManager.emailType.GetEmailType;
 
@@ -11,17 +13,17 @@ import javax.activation.*;
 public class LocalEmailSender implements EmailMagange {
 
     public ArrayList<String> EmailSendRepository(ArrayList<String> emails, String errorMessage) {
-        String from = "web@gmail.com";
         String host = "localhost";
         Properties properties = System.getProperties();
         properties.setProperty("mail.smtp.host", host);
         Session session = Session.getDefaultInstance(properties);
 
         GetEmailType type = new ErrorEmailType();
+        SenderEmail from = new OfficialEmail();
 
         try {
             MimeMessage message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(from));
+            message.setFrom(new InternetAddress(from.get()));
             for(String email : emails) {
                 message.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
                 message.setSubject(type.Get());
