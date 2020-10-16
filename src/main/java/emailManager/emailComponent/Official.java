@@ -1,6 +1,6 @@
-package emailManager.emailFrom;
+package emailManager.emailComponent;
 
-public class OfficialEmail implements SenderEmail {
+public class Official implements SenderEmail {
     public String get() {
         return "sachidisanayaka1998@.gmail.com";
     }

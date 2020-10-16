@@ -1,14 +1,13 @@
 package emailManager;
 
-import emailManager.emailFrom.OfficialEmail;
-import emailManager.emailFrom.SenderEmail;
+import emailManager.emailComponent.Official;
+import emailManager.emailComponent.SenderEmail;
 import emailManager.emailType.ErrorEmailType;
 import emailManager.emailType.GetEmailType;
 
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
-import javax.activation.*;
 
 public class LocalEmailSender implements EmailMagange {
 
@@ -19,7 +18,7 @@ public class LocalEmailSender implements EmailMagange {
         Session session = Session.getDefaultInstance(properties);
 
         GetEmailType type = new ErrorEmailType();
-        SenderEmail from = new OfficialEmail();
+        SenderEmail from = new Official();
 
         try {
             MimeMessage message = new MimeMessage(session);
