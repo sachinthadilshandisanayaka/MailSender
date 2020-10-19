@@ -1,4 +1,4 @@
-package operation.LastTimeStamGetter;
+package operation.TimeStamGetter;
 
 import java.util.ArrayList;
 

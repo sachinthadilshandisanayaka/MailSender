@@ -1,11 +1,13 @@
-package operation.LastTimeStamGetter;
+package operation.TimeStamGetter;
 
-import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
+import operation.splitFile.FileSplit;
+import operation.splitFile.SplitSpace;
 
 import java.util.ArrayList;
 
 public class LastTimeStampGet implements  TimeStamGet{
+    FileSplit fileSplit = new SplitSpace();
     public String[] getTimeStamp(ArrayList<String> data) {
-        return data.get(data.size()-1).split(" ");
+        return fileSplit.getSplit(data.get(data.size()-1));
     }
 }

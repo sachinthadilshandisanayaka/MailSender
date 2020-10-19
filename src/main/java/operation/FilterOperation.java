@@ -1,5 +1,7 @@
 package operation;
 
+import operation.TimeStamGetter.LastTimeStampGet;
+import operation.TimeStamGetter.TimeStamGet;
 import operation.dateFormatter.DateConvertMethod;
 import operation.dateFormatter.DateFomate;
 import operation.readedFileFilter.FileFilter;
@@ -52,8 +54,9 @@ public class FilterOperation implements Operation{
         return null;
     }
     public String getLastTimeStamp (ArrayList<String> readedData ) {
+        TimeStamGet timeStamGet = new LastTimeStampGet();
         if ( readedData.size() > 0) {
-            String[] date = readedData.get(readedData.size()-1).split(" ");
+            String[] date = timeStamGet.getTimeStamp(readedData);
             return date[0];
         }
        else {
