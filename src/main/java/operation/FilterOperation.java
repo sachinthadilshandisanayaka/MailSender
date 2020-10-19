@@ -4,6 +4,9 @@ import operation.dateFormatter.DateConvertMethod;
 import operation.dateFormatter.DateFomate;
 import operation.readedFileFilter.FileFilter;
 import operation.readedFileFilter.GetFileLastTimeStam;
+import operation.splitFile.FileSplit;
+import operation.splitFile.SplitIntoThree;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -14,6 +17,7 @@ public class FilterOperation implements Operation{
         String errorMessage = "";
         DateFomate dateFomate = new DateConvertMethod();
         FileFilter fileFilter = new GetFileLastTimeStam();
+        FileSplit fileSplit  = new SplitIntoThree();
 
         if( !fileFilter.GetLastTimeStamp(readedDate).equals(time)) {
             if ( readedDate.size() > 0) {
@@ -27,13 +31,15 @@ public class FilterOperation implements Operation{
                         long diff = date.getTime() - temporyDate.getTime();
                         if ( diff < 0 ) {
                             if(fileDate[1].equals("ERROR") ) {
-                                String[] split_error_message = fileData.split(" ", 3);
+//                                String[] split_error_message = fileData.split(" ", 3);
+                                String[] split_error_message = fileSplit.getSplit(fileData);
                                 errorMessage += split_error_message[2] + "\n";
                             }
                         }
                     } else {
                         if(fileDate[1].equals("ERROR") ) {
-                            String[] split_error_message = fileData.split(" ", 3);
+//                            String[] split_error_message = fileData.split(" ", 3);
+                            String[] split_error_message = fileSplit.getSplit(fileData);
                             errorMessage += split_error_message[2] + "\n";
                         }
                     }
